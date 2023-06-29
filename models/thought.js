@@ -1,4 +1,5 @@
 const { Schema, Types, model } = require('mongoose');
+const moment = require('moment');
 
 const reactionSchema = new Schema(
     {
@@ -18,7 +19,10 @@ const reactionSchema = new Schema(
       createdAt: {
         type: Date,
         default: Date.now,
-        // uesr a getter method to format the timestamp on the query 
+        get: function(value) {
+          return moment(value).format('MM-DD-YYYY HH:mm:ss');
+        }
+        
       },
     },
     {
@@ -41,7 +45,10 @@ const thoughtSchema = new Schema(
             type: Date,
             default: Date.now,
             required: true,
-            //use a getter method to format the timestamp on query 
+            get: function(value) {
+              return moment(value).format('MM-DD-YYYY HH:mm:ss');
+            }
+            
         },
         username: {
             type: String,
@@ -59,7 +66,7 @@ const thoughtSchema = new Schema(
 );
 
 thoughtSchema.virtual('reactionCount').get(function () {
-    return this.reaction.length;
+    return this.reactions.length;
 });
 
 const Thought = model("Thought", thoughtSchema);
