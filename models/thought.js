@@ -22,11 +22,11 @@ const reactionSchema = new Schema(
         get: function(value) {
           return moment(value).format('MM-DD-YYYY HH:mm:ss');
         }
-        
       },
     },
     {
       toJSON: {
+        virtuals: true,
         getters: true,
       },
       id: false,
