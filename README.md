@@ -16,7 +16,7 @@ This Social Network API uses a NoSQL database, allowing it to be used for variou
   Git clone the repo, run npm i to install the necessary dependencies and npm start to start the server.
   
   ## Usage
-  Walkthough Video Here
+ [Walkthough Video Here](https://drive.google.com/file/d/1JvdAwRE5uHzeObvJrb9levNWAxMKWrLT/view)
   
 <img width="1194" alt="Screenshot 2023-06-29 at 5 48 37 PM" src="https://github.com/MVincent15/SocialNetworkAPI/assets/123343948/2352121c-562e-4a91-a623-80ee720a7c94">
 
